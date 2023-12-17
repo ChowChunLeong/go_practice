@@ -1,7 +1,7 @@
 package main
 
 import (
-	"net/http"
+	"go_practice/controller"
 
 	"github.com/gin-gonic/gin"
 )
@@ -10,10 +10,13 @@ func main() {
 	// Initialize Gin's default router
 	router := gin.Default()
 
-	// Define a route and a handler
-	router.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "Hello, Gin!")
-	})
+	designPatternRoute := router.Group("api/designPattern")
+	{
+		//singleton
+		designPatternRoute.POST("/getSingleton", controller.GetSingletonInstance)
+		designPatternRoute.POST("/updateSingleton", controller.UpdateSingletonInstance)
+
+	}
 
 	// Run the application
 	router.Run(":8080")
