@@ -12,10 +12,12 @@ func main() {
 
 	designPatternRoute := router.Group("api/designPattern")
 	{
-		//singleton
+		//Singleton
 		designPatternRoute.POST("/getSingleton", controller.GetSingletonInstance)
 		designPatternRoute.POST("/updateSingleton", controller.UpdateSingletonInstance)
 
+		//Factory pattern
+		designPatternRoute.POST("/drawShape", controller.DrawShape)
 	}
 
 	// Run the application
