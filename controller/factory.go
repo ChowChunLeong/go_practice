@@ -2,7 +2,7 @@ package controller
 
 import (
 	"go_practice/helper"
-	"go_practice/service"
+	factorydesignpattern "go_practice/service/factoryDesignPattern"
 
 	"github.com/gin-gonic/gin"
 )
@@ -15,7 +15,7 @@ func DrawShape(c *gin.Context) {
 	if err := c.ShouldBind(&input); err != nil {
 		return
 	}
-	shape := service.GetShape(input.ShapeType)
+	shape := factorydesignpattern.GetShape(input.ShapeType)
 	resp := gin.H{
 		"draw_shape": shape.Draw(),
 	}

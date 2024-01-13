@@ -1,6 +1,6 @@
-package service
+package factorydesignpattern
 
-import "go_practice/service/shapeFactoryBlueprint"
+import "go_practice/service/factoryDesignPattern/shapeFactoryBlueprint"
 
 // 定义接口
 type Shape interface {
