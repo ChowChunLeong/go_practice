@@ -18,6 +18,9 @@ func main() {
 
 		//Factory pattern
 		designPatternRoute.POST("/drawShape", controller.DrawShape)
+
+		//abstract factory design pattern
+		designPatternRoute.POST("/useFurniture", controller.UseFurniture)
 	}
 
 	// Run the application
