@@ -1,13 +1,28 @@
 package controller
 
 import (
+	"database/sql"
+	"fmt"
 	"go_practice/helper"
 	"go_practice/service"
+	"log"
 
 	"github.com/gin-gonic/gin"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 func GetSingletonInstance(c *gin.Context) {
+	cnn, err := sql.Open("mysql", "root:root@tcp(172.17.0.3:3306)/live_sp_admin")
+	if err != nil {
+		log.Fatal(err)
+	}
+	id := 1
+	var name string
+
+	if err := cnn.QueryRow("SELECT name FROM users WHERE id = ? LIMIT 1", id).Scan(&name); err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(name)
 
 	singletonInstance := service.GetSingletonInstance()
 
