@@ -21,6 +21,9 @@ func main() {
 
 		//abstract factory design pattern
 		designPatternRoute.POST("/useFurniture", controller.UseFurniture)
+
+		//builder pattern
+		designPatternRoute.POST("/orderBurger", controller.OrderBurger)
 	}
 
 	// Run the application
