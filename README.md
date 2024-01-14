@@ -11,7 +11,8 @@ api/designPattern/updateSingleton
 Resource Sharing
 ### Example: 
 Database Connection
-### 
+### Signal
+When you need to ensure that a class has only one instance and provide a global point of access to it.
 
 ## Factory pattern
 ### Use Case: 
@@ -30,5 +31,9 @@ File name with **Factory**
 use to declare object based on client code's input
 Folder name with **FactoryBlueprint**
 use to store the object blueprint 
+### Signal
+When you want to delegate the responsibility of object instantiation to a factory class, 
+providing an interface for creating instances of a class.
+
 
 
