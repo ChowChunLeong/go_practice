@@ -1,0 +1,16 @@
+{
+    "condition": "when merchant request to create a trnx in gateway successfully",
+    "data_insert": {
+        "table1": {
+            "table_name": "gateway_transaction",
+            "transaction_status": "PENDING"
+        },
+        "table2": {
+            "table_name": "agent_transaction_fee",
+            "condition": "if merchant that create this trnx, that under some of the agent, then will record the agent fee",
+            "transaction_status": "PENDING"
+        }
+    },
+    "data_delete": {},
+    "data_update": {}
+}
