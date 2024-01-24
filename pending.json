@@ -1,16 +1,39 @@
-{
-    "condition": "when merchant request to create a trnx in gateway successfully",
-    "data_insert": {
-        "table1": {
-            "table_name": "gateway_transaction",
-            "transaction_status": "PENDING"
+[
+    {
+        "condition": "merchant request to create a trnx in gateway successfully",
+        "data_insert": {
+            "cost1": {
+                "table_name": "gateway_transaction",
+                "transaction_status": "PENDING"
+            },
+            "cost2": {
+                "table_name": "agent_transaction_fee",
+                "condition": "if merchant that create this trnx, that under some of the agent, then will record the agent fee",
+                "transaction_status": "PENDING"
+            },
+            "cost3": {
+                "table_name": "third_party_cost",
+                "condition": "third party help gateway process each trnx, also will charge some cost",
+                "transaction_status": "PENDING"
+            }
         },
-        "table2": {
-            "table_name": "agent_transaction_fee",
-            "condition": "if merchant that create this trnx, that under some of the agent, then will record the agent fee",
-            "transaction_status": "PENDING"
-        }
+        "data_delete": {},
+        "data_update": {}
     },
-    "data_delete": {},
-    "data_update": {}
-}
+    {
+        "condition": "merchant request to create a trnx in gateway successfully",
+        "data_insert": {
+            "table1": {
+                "table_name": "gateway_transaction",
+                "transaction_status": "PENDING"
+            },
+            "table2": {
+                "table_name": "agent_transaction_fee",
+                "condition": "if merchant that create this trnx, that under some of the agent, then will record the agent fee",
+                "transaction_status": "PENDING"
+            }
+        },
+        "data_delete": {},
+        "data_update": {}
+    }
+]
