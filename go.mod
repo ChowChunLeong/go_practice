@@ -2,7 +2,10 @@ module go_practice
 
 go 1.17
 
-require github.com/gin-gonic/gin v1.7.4
+require (
+	github.com/gin-gonic/gin v1.7.4
+	github.com/gorilla/websocket v1.5.0
+)
 
 require (
 	github.com/bytedance/sonic v1.9.1 // indirect

@@ -26,6 +26,9 @@ func main() {
 		designPatternRoute.POST("/orderBurger", controller.OrderBurger)
 	}
 
+	router.GET("/ws", controller.HandleWebSocket)
+
 	// Run the application
-	router.Run(":8080")
+	go router.Run(":8080")
+	router.Run(":8081") // Port for WebSocket
 }
