@@ -1,6 +1,7 @@
 package test
 
 import (
+	"go_practice/helper"
 	"log"
 	"os"
 	"sync"
@@ -43,6 +44,7 @@ func createBuffer() interface{} {
 }
 
 func TestSyncPool(t *testing.T) {
+	helper.Log("test.txt", "hello")
 	// 创建实例
 	bufferPool := &sync.Pool{
 		New: createBuffer,

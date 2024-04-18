@@ -35,5 +35,4 @@ use to store the object blueprint
 When you want to delegate the responsibility of object instantiation to a factory class, 
 providing an interface for creating instances of a class.
 
-
-
+## https://www.youtube.com/watch?v=YViOFMoQ_Iw&ab_channel=codeHeim
